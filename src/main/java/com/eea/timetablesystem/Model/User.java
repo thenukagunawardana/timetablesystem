@@ -1,7 +1,5 @@
 package com.eea.timetablesystem.Model;
 
-import com.eea.timetablesystem.Model.Role;
-
 import java.util.Collection;
 
 import javax.persistence.CascadeType;
@@ -45,8 +43,7 @@ public class User {
 
     private Collection<Role> roles;
 
-    public User()
-    {
+    public User() {
 
     }
 
