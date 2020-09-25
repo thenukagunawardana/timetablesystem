@@ -4,6 +4,7 @@ package com.eea.timetablesystem.Service;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import com.eea.timetablesystem.DTO.UserRegistrationDto;
@@ -42,6 +43,12 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public List<User> getAllUsers()
+    {
+        return userRepository.findAll();
+    }
+
+    @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         User user = userRepository.findByEmail(username);
@@ -55,5 +62,6 @@ public class UserServiceImpl implements UserService{
     {
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
     }
+
 
 }

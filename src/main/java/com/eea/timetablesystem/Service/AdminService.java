@@ -1,3 +1,4 @@
+/*
 package com.eea.timetablesystem.Service;
 
 
@@ -31,3 +32,4 @@ public class AdminService
         adminRepository.save(saveAdmin);
     }
 }
+*/
