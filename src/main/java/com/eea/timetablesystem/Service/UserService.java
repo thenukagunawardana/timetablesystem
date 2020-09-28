@@ -12,5 +12,7 @@ public interface UserService extends UserDetailsService
 
     User save(UserRegistrationDto registrationDto);
 
-    List<User>getAllUsers();
+    List<User>getAllUsers(String keyword);
+
+    void deleteUserById(int id);
 }

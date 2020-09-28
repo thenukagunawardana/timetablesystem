@@ -6,19 +6,20 @@ public class UserRegistrationDto
     private String lastName;
     private String email;
     private String password;
-
+    private String Role;
 
     public UserRegistrationDto()
     {
 
     }
 
-    public UserRegistrationDto(String firstName, String lastName, String email, String password) {
+    public UserRegistrationDto(String firstName, String lastName, String email, String password,String Role) {
         super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+;       this.Role=Role;
     }
 
     public String getFirstName() {
@@ -46,4 +47,11 @@ public class UserRegistrationDto
         this.password = password;
     }
 
+    public String getRole() {
+        return Role;
+    }
+
+    public void setRole(String role) {
+        Role = role;
+    }
 }
