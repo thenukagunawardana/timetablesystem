@@ -16,7 +16,12 @@ public class ModuleServiceImpl implements ModuleService
     private ModulesRepository modulesRepository;
 
     @Override
-    public List<Modules> getAllModules() {
+    public List<Modules> getAllModules(String keyword)
+    {
+        if (keyword!=null)
+        {
+            return modulesRepository.findAll(keyword);
+        }
         return modulesRepository.findAll();
     }
 

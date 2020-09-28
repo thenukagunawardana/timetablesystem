@@ -16,8 +16,12 @@ public class BatchesServiceImpl implements BatchesService
 
 
     @Override
-    public List<Batches> getAllBatches()
+    public List<Batches> getAllBatches(String keyword)
     {
+        if (keyword!=null)
+        {
+           return batchesRepository.findAll(keyword);
+        }
         return batchesRepository.findAll();
     }
 

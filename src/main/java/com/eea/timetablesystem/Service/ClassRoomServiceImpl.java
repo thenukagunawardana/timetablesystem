@@ -18,7 +18,12 @@ public class ClassRoomServiceImpl implements ClassRoomService
 
 
     @Override
-    public List<ClassRooms> getAllClassRooms() {
+    public List<ClassRooms> getAllClassRooms(String keyword)
+    {
+        if (keyword!=null)
+        {
+            return classRoomRepository.findAll(keyword);
+        }
         return classRoomRepository.findAll();
     }
 

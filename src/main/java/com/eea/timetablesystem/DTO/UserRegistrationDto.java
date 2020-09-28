@@ -7,6 +7,7 @@ public class UserRegistrationDto
     private String email;
     private String password;
 
+
     public UserRegistrationDto()
     {
 
@@ -44,4 +45,5 @@ public class UserRegistrationDto
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

@@ -11,6 +11,17 @@
     <div class="container my-2">
 
         <h1>Batches List</h1>
+        <div>
+            <form th:action="@{/batches}">
+                Search:
+                <input type="text" name="keyword" th:value="${keyword}"/>
+
+                <input type="submit" value="Search"/>
+
+                <input type="button" value="Clear" onclick="clearFilter()"/>
+            </form>
+        </div>
+
         <a th:href="@{/addBatch}" class="btn btn-primary btn-sm mb-3">Add New Batch</a>
         <table border="1" class="table table-striped table-responsive">
             <thead>
@@ -33,5 +44,12 @@
         </table>
     </div>
 </div>
+
+<script type="text/javascript">
+    function clearFilter()
+    {
+        window.location='/batches';
+    }
+</script>
 </body>
 </html>
