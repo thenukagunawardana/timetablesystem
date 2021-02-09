@@ -20,13 +20,17 @@ public class MainController
     {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-        if (authentication.getAuthorities().stream().anyMatch(r -> r.getAuthority().equals("Admin")))
+        if (authentication.getAuthorities().stream().anyMatch(r -> r.getAuthority().equals("Admin")||r.getAuthority().equals("admin")))
         {
             return "redirect:/adminHomePage";
         }
-        if (authentication.getAuthorities().stream().anyMatch(r -> r.getAuthority().equals("Student")))
+        if (authentication.getAuthorities().stream().anyMatch(r -> r.getAuthority().equals("Student")||r.getAuthority().equals("student")))
         {
             return "redirect:/studentHomePage";
+        }
+        if (authentication.getAuthorities().stream().anyMatch(r -> r.getAuthority().equals("Lecturer")||r.getAuthority().equals("lecturer")))
+        {
+            return "redirect:/lecturerHomePage";
         }
         return "index";
     }
@@ -41,5 +45,11 @@ public class MainController
     private String studentHomePage()
     {
         return "studentHomePage";
+    }
+
+    @GetMapping("/lecturerHomePage")
+    private String lecturerHomePage()
+    {
+        return "lecturerHomePage";
     }
 }

@@ -21,7 +21,8 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService
+{
 
     private final UserRepository userRepository;
 
@@ -53,6 +54,13 @@ public class UserServiceImpl implements UserService{
     {
         this.userRepository.deleteById(id);
     }
+
+    @Override
+    public boolean passwordencode(String password, String pass)
+    {
+        return passwordEncoder.matches(password, pass);
+    }
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

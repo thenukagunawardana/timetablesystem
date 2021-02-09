@@ -19,7 +19,7 @@ public class UserRegistrationDto
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-;       this.Role=Role;
+        this.Role=Role;
     }
 
     public String getFirstName() {
@@ -47,7 +47,8 @@ public class UserRegistrationDto
         this.password = password;
     }
 
-    public String getRole() {
+    public String getRole()
+    {
         return Role;
     }
 

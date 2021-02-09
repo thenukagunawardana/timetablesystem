@@ -15,4 +15,6 @@ public interface UserService extends UserDetailsService
     List<User>getAllUsers(String keyword);
 
     void deleteUserById(int id);
+
+    boolean passwordencode(String password, String pass);
 }

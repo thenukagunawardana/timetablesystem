@@ -26,9 +26,9 @@ public class UserController
         return "user";
     }
 
-
     @GetMapping("/deleteUser/{id}")
-    public String deleteUser(@PathVariable(value = "id")int id){
+    public String deleteUser(@PathVariable(value = "id")int id)
+    {
         this.userService.deleteUserById(id);
         return "redirect:/user";
 

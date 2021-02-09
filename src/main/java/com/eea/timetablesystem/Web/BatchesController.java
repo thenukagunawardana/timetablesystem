@@ -55,7 +55,8 @@ public class BatchesController
     }
 
     @GetMapping("/deleteBatch/{id}")
-    public String deleteBatch(@PathVariable(value = "id")int id){
+    public String deleteBatch(@PathVariable(value = "id")int id)
+    {
         this.batchesService.deleteBatchesById(id);
         return "redirect:/batches";
 

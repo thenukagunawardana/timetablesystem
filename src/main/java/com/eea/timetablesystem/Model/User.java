@@ -44,7 +44,8 @@ public class User {
 
     private Collection<Role> roles;
 
-    public User() {
+    public User()
+    {
 
     }
 
